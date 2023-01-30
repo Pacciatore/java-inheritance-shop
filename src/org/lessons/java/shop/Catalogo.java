@@ -41,15 +41,15 @@ public class Catalogo {
 			switch (choice) {
 
 			case 1:
-				smartphone(s);
+				smartphone(s, catalogue, i);
 				break;
 
 			case 2:
-				televisore(s);
+				televisore(s, catalogue, i);
 				break;
 
 			case 3:
-				cuffie(s);
+				cuffie(s, catalogue, i);
 				break;
 
 			default:
@@ -63,7 +63,7 @@ public class Catalogo {
 
 	}
 
-	public static void smartphone(Scanner s) {
+	public static void smartphone(Scanner s, Prodotto[] catalogue, int i) {
 
 		System.out.println("------------------------------------------------");
 		System.out.println("Registrazione Smartphone");
@@ -90,6 +90,8 @@ public class Catalogo {
 		Smartphone smartphone = new Smartphone(productName, productBrand, productPrice, productVat, productImei,
 				productMemoryCapacity);
 
+		catalogue[i] = smartphone;
+
 		System.out.println("------------------------------------------------");
 
 		System.out.println("Riepilogo dati inseriti: ");
@@ -105,7 +107,7 @@ public class Catalogo {
 
 	}
 
-	public static void televisore(Scanner s) {
+	public static void televisore(Scanner s, Prodotto[] catalogue, int i) {
 
 		System.out.println("------------------------------------------------");
 		System.out.println("Registrazione Televisore");
@@ -137,6 +139,8 @@ public class Catalogo {
 		Televisore tv = new Televisore(productName, productBrand, productPrice, productVat, productInches,
 				productSmartTv);
 
+		catalogue[i] = tv;
+
 		System.out.println("------------------------------------------------");
 
 		System.out.println("Riepilogo dati inseriti: ");
@@ -155,7 +159,7 @@ public class Catalogo {
 
 	}
 
-	public static void cuffie(Scanner s) {
+	public static void cuffie(Scanner s, Prodotto[] catalogue, int i) {
 
 		System.out.println("------------------------------------------------");
 		System.out.println("Registrazione Cuffie");
@@ -185,6 +189,8 @@ public class Catalogo {
 			productWired = false;
 
 		Cuffie cuffie = new Cuffie(productName, productBrand, productPrice, productVat, productColor, productWired);
+
+		catalogue[i] = cuffie;
 
 		System.out.println("------------------------------------------------");
 
