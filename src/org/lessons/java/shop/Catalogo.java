@@ -19,7 +19,37 @@ public class Catalogo {
 
 		menu(s, catalogue);
 
+		displayMenu(s, catalogue);
+
 		s.close();
+
+	}
+
+	public static void displayMenu(Scanner s, Prodotto[] catalogue) {
+
+		int choice = 0;
+
+		do {
+
+			System.out.println("Scegliere l'azione da compiere: ");
+			System.out.println("1. Visualizzare i prodotti in catalogo");
+			System.out.println("2. Chiudere il programma");
+
+			choice = Integer.parseInt(s.nextLine());
+
+			switch (choice) {
+			case 1:
+				System.out.println("Riepilogo prodotti del catalogo");
+				break;
+			case 2:
+				System.out.println("Chiusura programma...");
+				break;
+
+			default:
+				System.out.println("Inserire un numero tra 1 e 2");
+				break;
+			}
+		} while (choice != 2);
 
 	}
 
@@ -53,7 +83,7 @@ public class Catalogo {
 				break;
 
 			default:
-				System.out.println("Inserire un numero compreso tra 1 e 3.");
+				System.out.println("Inserire un numero compreso tra 1 e 4.");
 				break;
 			}
 
