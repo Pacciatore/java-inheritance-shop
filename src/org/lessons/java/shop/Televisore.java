@@ -11,4 +11,21 @@ public class Televisore extends Prodotto {
 		this.smartTv = _smartTv;
 	}
 
+	public float getInches() {
+		return this.inches;
+	}
+
+	public void setInches(float _inches) {
+		if (_inches > 0f)
+			this.inches = _inches;
+	}
+
+	public boolean isSmartTv() {
+		return this.smartTv;
+	}
+
+	public void setSmartTv(boolean _smartTv) {
+		this.smartTv = _smartTv;
+	}
+
 }
