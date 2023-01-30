@@ -38,9 +38,11 @@ public class Catalogo {
 			choice = Integer.parseInt(s.nextLine());
 
 			switch (choice) {
+
 			case 1:
-				System.out.println("Riepilogo prodotti del catalogo");
+				displayCatalogue(catalogue);
 				break;
+
 			case 2:
 				System.out.println("Chiusura programma...");
 				break;
@@ -48,8 +50,21 @@ public class Catalogo {
 			default:
 				System.out.println("Inserire un numero tra 1 e 2");
 				break;
+
 			}
 		} while (choice != 2);
+
+	}
+
+	public static void displayCatalogue(Prodotto[] catalogue) {
+
+		System.out.println("-------------------------------------------------");
+
+		for (int i = 0; i < catalogue.length; i++) {
+			System.out.println((i + 1) + ". " + catalogue[i].getName());
+		}
+
+		System.out.println("-------------------------------------------------");
 
 	}
 
