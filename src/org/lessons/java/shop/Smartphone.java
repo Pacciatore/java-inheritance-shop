@@ -11,4 +11,21 @@ public class Smartphone extends Prodotto {
 		this.memoryCapacity = _memoryCapacity;
 	}
 
+	public String getImei() {
+		return String.valueOf(this.imei);
+	}
+
+	public void setImei(String _imei) {
+		if (_imei.length() == 15)
+			this.imei = Integer.parseInt(_imei);
+	}
+
+	public double getMemoryCapacity() {
+		return this.memoryCapacity;
+	}
+
+	public void setMemoryCapacity(int _memoryCapacity) {
+		this.memoryCapacity = _memoryCapacity;
+	}
+
 }
