@@ -11,4 +11,20 @@ public class Cuffie extends Prodotto {
 		this.wired = _wired;
 	}
 
+	public String getColor() {
+		return this.color;
+	}
+
+	public void setColor(String _color) {
+		this.color = _color;
+	}
+
+	public boolean isWired() {
+		return this.wired;
+	}
+
+	public void setWired(boolean _wired) {
+		this.wired = _wired;
+	}
+
 }
