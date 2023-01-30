@@ -49,7 +49,7 @@ public class Catalogo {
 				break;
 
 			case 3:
-				System.out.println("Cuffie");
+				cuffie(s);
 				break;
 
 			default:
@@ -78,7 +78,7 @@ public class Catalogo {
 		System.out.println("Inserire prezzo: ");
 		float productPrice = Float.parseFloat(s.nextLine());
 
-		System.out.println("Inserire percentuale IVA: ");
+		System.out.println("Inserire aliquota IVA: ");
 		int productVat = Integer.parseInt(s.nextLine());
 
 		System.out.println("Inserire codice IMEI: ");
@@ -120,7 +120,7 @@ public class Catalogo {
 		System.out.println("Inserire prezzo: ");
 		float productPrice = Float.parseFloat(s.nextLine());
 
-		System.out.println("Inserire percentuale IVA: ");
+		System.out.println("Inserire aliquota IVA: ");
 		int productVat = Integer.parseInt(s.nextLine());
 
 		System.out.println("Inserire grandezza in pollici: ");
@@ -145,11 +145,60 @@ public class Catalogo {
 		System.out.println("Marchio: " + tv.getBrand());
 		System.out.println("Prezzo: " + tv.getPriceFormatted() + "€");
 		System.out.println("IVA: " + tv.getVat() + "%");
-		System.out.println("Codice IMEI: " + tv.getInches());
+		System.out.println("Grandezza: " + tv.getInches() + "\"");
 		if (tv.isSmartTv())
 			System.out.println("Smart TV");
 		else
 			System.out.println("Non Smart TV");
+
+		System.out.println("------------------------------------------------");
+
+	}
+
+	public static void cuffie(Scanner s) {
+
+		System.out.println("------------------------------------------------");
+		System.out.println("Registrazione Cuffie");
+		System.out.println();
+
+		System.out.println("Inserire nome prodotto: ");
+		String productName = s.nextLine();
+
+		System.out.println("Inserire marchio: ");
+		String productBrand = s.nextLine();
+
+		System.out.println("Inserire prezzo: ");
+		float productPrice = Float.parseFloat(s.nextLine());
+
+		System.out.println("Inserire aliquota IVA: ");
+		int productVat = Integer.parseInt(s.nextLine());
+
+		System.out.println("Inserire colore: ");
+		String productColor = s.nextLine();
+
+		System.out.println("Con cavo? (S/N): ");
+		String smartTvChoice = s.nextLine();
+		boolean productWired = false;
+		if (smartTvChoice.toLowerCase().equals("s"))
+			productWired = true;
+		else
+			productWired = false;
+
+		Cuffie cuffie = new Cuffie(productName, productBrand, productPrice, productVat, productColor, productWired);
+
+		System.out.println("------------------------------------------------");
+
+		System.out.println("Riepilogo dati inseriti: ");
+
+		System.out.println("Nome: " + cuffie.getName());
+		System.out.println("Marchio: " + cuffie.getBrand());
+		System.out.println("Prezzo: " + cuffie.getPriceFormatted() + "€");
+		System.out.println("IVA: " + cuffie.getVat() + "%");
+		System.out.println("Colore: " + cuffie.getColor());
+		if (cuffie.isWired())
+			System.out.println("Con cavo");
+		else
+			System.out.println("Wireless");
 
 		System.out.println("------------------------------------------------");
 
